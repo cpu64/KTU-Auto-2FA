@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="libraries/JS-OTP/dist/jsOTP.min.js"></script>
+    <script src="libraries/jsQR/dist/jsQR.js"></script>
+    <script src="scripts/background.js"></script>
+    <script src="scripts/popup.js"></script>
+    <script src="scripts/qrScanner.js"></script>
+    <script src="scripts/secretUploader.js"></script>
+    <script src="scripts/mainScript.js"></script>
+    <link rel="stylesheet" href="style/main.css ">
+  </head>
+  <body class="bod">
+    <div class="header">
+      <img class="logo" src="style/logo.png">
+    </div>
+    <div>
+      <table>
+        <tr>
+          <td><label>Autoinput login info</label></td>
+          <td>
+            <label class="switch">
+              <input id="autoLoginInfo" type="checkbox">
+              <span class="slider"></span>
+            </label>
+          </td>
+        </tr>
+        <tr>
+          <td><label>Autoinput 2FA code</label></td>
+          <td>
+            <label class="switch">
+              <input id="auto2FA" type="checkbox">
+              <span class="slider"></span>
+            </label>
+          </td>
+        </tr>
+      </table>
+  
+      
+      <br/><br/>
+      
+      <br/>
+      <label for="fname">Username:</label>
+      <input type="text" id="usernameInput" name="fname" value=""><br>
+
+      <label for="fname">Password:</label>
+      <input type="text" id="passwordInput" name="fname" value=""><br>
+      <input id="usernameAndPasswordUpload" type="button" value="Save username and password"/><br>
+
+      <label for="fname">Secret:</label><br>
+      <input type="text" id="secretInput" name="fname" value=""><br>
+      <input id="secretUpload" type="button" value="Save secret from textbox"/>
+      <h1>2FA Code:</h1>
+      <p id="text1">Please upload secret</p>
+    </div>
+    <div class="footer"></div>
+  </body>
+</html>
