@@ -1,13 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <script src="libraries/JS-OTP/dist/jsOTP.min.js"></script>
-    <script src="libraries/jsQR/dist/jsQR.js"></script>
+    <script src="libraries/JS-OTP/dist/jsOTP.js"></script>
     <script src="scripts/background.js"></script>
     <script src="scripts/popup.js"></script>
-    <script src="scripts/qrScanner.js"></script>
-    <script src="scripts/secretUploader.js"></script>
-    <script src="scripts/mainScript.js"></script>
     <link rel="stylesheet" href="style/main.css ">
   </head>
   <body class="bod">
@@ -51,7 +47,7 @@
       <input type="text" id="secretInput" name="fname" value=""><br>
       <input id="secretUpload" type="button" value="Save secret from textbox"/>
       <h1>2FA Code:</h1>
-      <p id="text1">Please upload secret</p>
+      <h2 id="totpCode">Please upload secret</h2>
     </div>
     <div class="footer"></div>
   </body>

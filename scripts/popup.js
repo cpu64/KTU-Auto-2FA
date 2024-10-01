@@ -44,5 +44,10 @@ window.onload = function() {
       document.getElementById('passwordInput').value = data.password;
     if(data.secret != null)
       document.getElementById('secretInput').value = data.secret;
+
+    // totp
+    var totp = new jsOTP.totp();
+    var timeCode = totp.getOtp(data.secret);
+    document.getElementById('totpCode').textContent = timeCode;
   });
 }
