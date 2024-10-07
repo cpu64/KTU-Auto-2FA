@@ -51,17 +51,23 @@ window.onload = function() {
     // Function to update the TOTP code and time left
     function updateTotp() {
       var timeCode = totp.getOtp(data.secret);
-      var timeLeft = totp.getTimeLeft();
       document.getElementById('totpCode').textContent = timeCode;
+    }
+
+    function updateTimer(){
+      var timeLeft = totp.getTimeLeft();
       document.getElementById('timeLeft').textContent = "Time left: " + timeLeft + "s";
+      if(timeLeft == 30)
+        updateTotp();
     }
 
     // Call the function immediately to display the initial code and time left
     updateTotp();
+    updateTimer();
 
     // Update every second
     setInterval(function() {
-      updateTotp();
+      updateTimer();
     }, 1000); // 1000ms = 1 second
   });
 }
