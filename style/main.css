@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     border-width: 0;
+    min-width: 220px;
 }
 
 .header {
@@ -19,6 +20,40 @@
 .logo {
     height: 100%
 }
+
+.eye, .eye-slash {
+  width: 20px;
+  height: 20px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: inline-block;
+  cursor: pointer;
+  vertical-align: middle; /* Align icon with the middle of the input field */
+}
+
+.eye {
+  background-image: url('eye.png');
+  /*image credits: flaticon.com/authors/gregor-cresnar */
+}
+
+.eye-slash {
+  background-image: url('eye-slash.png');
+  /*image credits: flaticon.com/authors/th-studio */
+}
+
+h2, h4 {
+  margin: 0; /* Remove the default margin */
+  padding: 0; /* Remove any padding, if necessary */
+}
+
+h2 {
+  margin-bottom: 2px; /* Adjust spacing between the h2 and the next element */
+}
+
+h4 {
+  margin-top: 2px; /* Adjust spacing between the h4 and the element above it */
+}
+
 
 
 

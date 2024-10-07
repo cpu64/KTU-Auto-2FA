@@ -73,6 +73,14 @@
       return otp;
     }
 
+	getTimeLeft(now = new Date().getTime()) {
+		var epoch, timeElapsed, timeLeft;
+		epoch = Math.round(now / 1000.0); // Current time in seconds
+		timeElapsed = epoch % this.expiry; // Time passed in the current interval
+		timeLeft = this.expiry - timeElapsed; // Time remaining until the next interval
+		return timeLeft;
+	  }
+
   };
 
   Hotp = class Hotp {
