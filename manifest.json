@@ -19,4 +19,4 @@
     }],
     "permissions": ["storage"],
     "host_permissions": ["*://*.login.ktu.lt/"]
-  }
+}

@@ -108,7 +108,7 @@
       digest = shaObj.getHMAC("HEX");
       // Get byte array
       h = this.hexToBytes(digest);
-      
+
       // Truncate
       offset = h[19] & 0xf;
       v = (h[offset] & 0x7f) << 24 | (h[offset + 1] & 0xff) << 16 | (h[offset + 2] & 0xff) << 8 | h[offset + 3] & 0xff;

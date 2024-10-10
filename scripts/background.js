@@ -28,7 +28,7 @@ if( 'function' === typeof importScripts) {
                 await new Promise(r => setTimeout(r, 31*1000-Date.now()%(30*1000)));
 
               }
-              last_code_gen = Math.floor(Date.now()/(30*1000))*30*1000;;
+              last_code_gen = Math.floor(Date.now()/(30*1000))*30*1000;
               var totp1 = new jsOTP.totp(30, 6);
               if(data.secret != null)
                 var code = totp1.getOtp(data.secret);
