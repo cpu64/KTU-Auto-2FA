@@ -23,12 +23,11 @@ if( 'function' === typeof importScripts) {
           chrome.storage.local.get(["secret", "auto2FA"], async function(data) {
             if(data.auto2FA)
             {
-              if(Date.now()-last_code_gen < 31*1000) {
+              if(last_code_gen >= Math.floor(Date.now()/1000/30) || getTimeLeft(30) < 2) {
                 chrome.tabs.sendMessage(tabId, { message: "background_to_content", login_stage: 2, waiting: true });
-                await new Promise(r => setTimeout(r, 31*1000-Date.now()%(30*1000)));
-
+                await new Promise(r => setTimeout(r, (getTimeLeft(30) + 1) * 1000));
               }
-              last_code_gen = Math.floor(Date.now()/(30*1000))*30*1000;
+              last_code_gen = Math.floor(Date.now()/1000/30);
               if(data.secret != null)
                 getTOTP(data.secret, 30, 6, function (code) {
                   chrome.tabs.sendMessage(tabId, { message: "background_to_content", login_stage: 2, code: code });

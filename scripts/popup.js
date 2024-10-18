@@ -33,7 +33,6 @@ function secretUpload() {
 
 window.onload = function() {
   chrome.storage.local.get(["autoLoginInfo", "auto2FA", "username", "password", "secret"], function(data) {
-    console.log(data);
     if (data.autoLoginInfo != null)
       document.getElementById('autoLoginInfo').checked = data.autoLoginInfo;
     if (data.auto2FA != null)

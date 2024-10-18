@@ -1,7 +1,7 @@
 {
     "manifest_version": 3,
     "name": "KTU-Auto-2FA",
-    "description": "Base Level Extension",
+    "description": "Extension to automatically log into KTU university services bypassing the need to input 2FA code",
     "version": "1.0",
     "action": {
       "default_popup": "main.html"
@@ -10,14 +10,10 @@
       "service_worker": "scripts/background.js",
       "page": "background.html"
     },
-    "web_accessible_resources": [{
-        "resources": ["scripts/totp.js"],
-        "matches": ["<all_urls>"]
-    }],
     "content_scripts": [{
-      "matches": ["*://*.login.ktu.lt/simplesaml/module.php/*", "*://uais.cr.ktu.lt/ktuis/stp_prisijungimas/*"],
+      "matches": ["https://login.ktu.lt/simplesaml/module.php/core/*", "https://login.ktu.lt/simplesaml/module.php/privacyidea/*"],
       "js": ["scripts/contentScript.js"]
     }],
     "permissions": ["storage"],
-    "host_permissions": ["*://*.login.ktu.lt/"]
+    "host_permissions": ["https://login.ktu.lt/simplesaml/module.php/*"]
 }

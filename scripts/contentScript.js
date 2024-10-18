@@ -10,9 +10,9 @@
             } else if (login_stage === 2) {
                 if(waiting) {
                     var nIntervId = setInterval(function() {
-                        var timeLeft = Math.floor((30*1000-Date.now()%(30*1000))/1000);
+                        var timeLeft = 30-Math.round((Date.now()/1000)%30);
                         document.getElementById('otpHint').value="Waiting: " + timeLeft;
-                        if(timeLeft < 1)
+                        if(timeLeft <= 1)
                             clearInterval(nIntervId);
                     }, 1000);
                 } else {
