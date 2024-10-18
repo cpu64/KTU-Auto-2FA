@@ -1,11 +1,11 @@
 if( 'function' === typeof importScripts) {
   importScripts('totp.js');
+}
   var last_login1 = 0;
   var last_login2 = 0;
   var last_code_gen = 0;
 
   chrome.tabs.onUpdated.addListener( function (tabId, changeInfo, tab) {
-    globalTabId = tabId;
 
       if (changeInfo.status == 'complete') {
         if (Date.now() - last_login1 > 1000 && tab.url && tab.url.includes("loginuserpass")) {
@@ -40,4 +40,4 @@ if( 'function' === typeof importScripts) {
     })
 
     // resize window to see secret automatically
-}
+

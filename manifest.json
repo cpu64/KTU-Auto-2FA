@@ -7,7 +7,8 @@
       "default_popup": "main.html"
     },
     "background": {
-      "service_worker": "scripts/background.js"
+      "service_worker": "scripts/background.js",
+      "page": "background.html"
     },
     "web_accessible_resources": [{
         "resources": ["scripts/totp.js"],
