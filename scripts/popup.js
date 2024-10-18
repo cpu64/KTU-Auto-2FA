@@ -45,17 +45,15 @@ window.onload = function() {
     if (data.secret != null)
       document.getElementById('secretInput').value = data.secret;
 
-    // Initialize TOTP
-    var totp = new jsOTP.totp();
-
     // Function to update the TOTP code and time left
     function updateTotp() {
-      var timeCode = totp.getOtp(data.secret);
-      document.getElementById('totpCode').textContent = timeCode;
+      getTOTP(data.secret, 30, 6, function(code) {
+        document.getElementById('totpCode').textContent = code;
+      });
     }
 
     function updateTimer(){
-      var timeLeft = totp.getTimeLeft();
+      var timeLeft = getTimeLeft(30);
       document.getElementById('timeLeft').textContent = "Time left: " + timeLeft + "s";
       if(timeLeft == 30)
         updateTotp();

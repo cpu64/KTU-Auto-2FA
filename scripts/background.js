@@ -1,5 +1,5 @@
 if( 'function' === typeof importScripts) {
-  importScripts('../libraries/JS-OTP/dist/jsOTP.js');
+  importScripts('totp.js');
   var last_login1 = 0;
   var last_login2 = 0;
   var last_code_gen = 0;
@@ -29,10 +29,10 @@ if( 'function' === typeof importScripts) {
 
               }
               last_code_gen = Math.floor(Date.now()/(30*1000))*30*1000;
-              var totp1 = new jsOTP.totp(30, 6);
               if(data.secret != null)
-                var code = totp1.getOtp(data.secret);
-              chrome.tabs.sendMessage(tabId, { message: "background_to_content", login_stage: 2, code: code });
+                getTOTP(data.secret, 30, 6, function (code) {
+                  chrome.tabs.sendMessage(tabId, { message: "background_to_content", login_stage: 2, code: code });
+                });
             }
           });
         }
