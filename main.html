@@ -1,62 +1,56 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <script src="scripts/totp.js"></script>
-    <link rel="stylesheet" href="style/main.css ">
-  </head>
-  <body class="bod">
-    <div class="header">
-      <img class="logo" src="style/logo.png">
-    </div>
-    <div>
-      <table>
-        <tr>
-          <td><label>Autoinput login info</label></td>
-          <td>
-            <label class="switch">
-              <input id="autoLoginInfo" type="checkbox">
-              <span class="slider"></span>
-            </label>
-          </td>
-        </tr>
-        <tr>
-          <td><label>Autoinput 2FA code</label></td>
-          <td>
-            <label class="switch">
-              <input id="auto2FA" type="checkbox">
-              <span class="slider"></span>
-            </label>
-          </td>
-        </tr>
-      </table>
-
-
-      <br/><br/>
-
-      <br/>
-      <div id="usernameAndPasswordDiv">
-        <label for="fname">Username:</label>
-        <input type="text" id="usernameInput" name="fname" value=""><br>
-
-        <label for="fname">Password:</label>
-        <input type="password" id="passwordInput" name="fname" value="">
-        <i class="eye-slash" id="togglePassword"></i><br>
-        <input id="usernameAndPasswordUpload" type="button" value="Save username and password"/>
-      </div>
-
-      <div id="secretDiv">
-        <label for="fname">Secret:</label><br>
-        <input type="password" id="secretInput" name="fname" value="">
-        <i class="eye-slash" id="toggleSecret"></i><br>
-        <input id="secretUpload" type="button" value="Save secret from textbox"/>
-      </div>
-      <br>
-      <h2>2FA Code:</h2>
-      <h2 id="totpCode">Please upload secret</h2>
-      <h4 id="timeLeft"></h4>
-    </div>
-    <div class="footer"></div>
-
-    <script src="scripts/popup.js"></script>
-  </body>
+    <head>
+        <script src="scripts/totp.js"></script>
+        <link rel="stylesheet" href="style/main.css " />
+    </head>
+    <body class="bod">
+        <div class="header">
+            <img class="logo" src="style/logo.png" />
+        </div>
+        <div>
+            <table>
+                <tr>
+                    <td><label>Autoinput login info</label></td>
+                    <td>
+                        <label class="switch">
+                            <input id="autoLoginInfo" type="checkbox" />
+                            <span class="slider"></span>
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label>Autoinput 2FA code</label></td>
+                    <td>
+                        <label class="switch">
+                            <input id="auto2FA" type="checkbox" />
+                            <span class="slider"></span>
+                        </label>
+                    </td>
+                </tr>
+            </table>
+            <br /><br />
+            <br />
+            <div id="usernameAndPasswordDiv">
+                <label for="fname">Username:</label>
+                <input type="text" id="usernameInput" name="fname" value="" /><br />
+                <label for="fname">Password:</label>
+                <input type="password" id="passwordInput" name="fname" value="" />
+                <i class="eye-slash" id="togglePassword"></i><br />
+                <input id="usernameAndPasswordUpload" type="button" value="Save username and password" />
+            </div>
+            <div id="secretDiv">
+                <label for="fname">Secret:</label><br />
+                <input type="password" id="secretInput" name="fname" value="" />
+                <i class="eye-slash" id="toggleSecret"></i><br />
+                <input id="secretUpload" type="button" value="Save secret from textbox" />
+            </div>
+            <br />
+            <h2>2FA Code:</h2>
+            <h2 id="totpCode">Please upload secret</h2>
+            <h4 id="timeLeft"></h4>
+        </div>
+        <div class="footer"></div>
+        <script src="scripts/popup.js"></script>
+    </body>
 </html>

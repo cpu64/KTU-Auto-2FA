@@ -18,44 +18,43 @@
 }
 
 .logo {
-    height: 100%
+    height: 100%;
 }
 
-.eye, .eye-slash {
-  width: 20px;
-  height: 20px;
-  background-size: contain;
-  background-repeat: no-repeat;
-  display: inline-block;
-  cursor: pointer;
-  vertical-align: middle; /* Align icon with the middle of the input field */
+.eye,
+.eye-slash {
+    width: 20px;
+    height: 20px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: inline-block;
+    cursor: pointer;
+    vertical-align: middle; /* Align icon with the middle of the input field */
 }
 
 .eye {
-  background-image: url('eye.png');
-  /*image credits: flaticon.com/authors/gregor-cresnar */
+    background-image: url("eye.png");
+    /*image credits: flaticon.com/authors/gregor-cresnar */
 }
 
 .eye-slash {
-  background-image: url('eye-slash.png');
-  /*image credits: flaticon.com/authors/th-studio */
+    background-image: url("eye-slash.png");
+    /*image credits: flaticon.com/authors/th-studio */
 }
 
-h2, h4 {
-  margin: 0; /* Remove the default margin */
-  padding: 0; /* Remove any padding, if necessary */
+h2,
+h4 {
+    margin: 0; /* Remove the default margin */
+    padding: 0; /* Remove any padding, if necessary */
 }
 
 h2 {
-  margin-bottom: 2px; /* Adjust spacing between the h2 and the next element */
+    margin-bottom: 2px; /* Adjust spacing between the h2 and the next element */
 }
 
 h4 {
-  margin-top: 2px; /* Adjust spacing between the h4 and the element above it */
+    margin-top: 2px; /* Adjust spacing between the h4 and the element above it */
 }
-
-
-
 
 /* The switch - the box around the slider */
 .switch {
@@ -63,17 +62,17 @@ h4 {
     display: inline-block;
     width: 30px;
     height: 16px;
-  }
-  
-  /* Hide default HTML checkbox */
-  .switch input {
+}
+
+/* Hide default HTML checkbox */
+.switch input {
     opacity: 0;
     width: 0;
     height: 0;
-  }
-  
-  /* The slider */
-  .slider {
+}
+
+/* The slider */
+.slider {
     position: absolute;
     cursor: pointer;
     top: 0;
@@ -81,11 +80,11 @@ h4 {
     right: 0;
     bottom: 0;
     background-color: #ccc;
-    -webkit-transition: .2s;
-    transition: .2s;
-  }
-  
-  .slider:before {
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
+}
+
+.slider:before {
     position: absolute;
     content: "";
     height: 13px;
@@ -93,20 +92,20 @@ h4 {
     left: 2px;
     bottom: 2px;
     background-color: white;
-    -webkit-transition: .2s;
-    transition: .2s;
-  }
-  
-  input:checked + .slider {
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
+}
+
+input:checked + .slider {
     background-color: #115e59;
-  }
-  
-  input:focus + .slider {
+}
+
+input:focus + .slider {
     box-shadow: 0 0 1px #115e59;
-  }
-  
-  input:checked + .slider:before {
+}
+
+input:checked + .slider:before {
     -webkit-transform: translateX(13px);
     -ms-transform: translateX(13px);
     transform: translateX(13px);
-  }
+}
