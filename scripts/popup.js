@@ -39,27 +39,29 @@ window.onload = function () {
         if (data.password != null) document.getElementById("passwordInput").value = data.password;
         if (data.secret != null) document.getElementById("secretInput").value = data.secret;
 
-        // Function to update the TOTP code and time left
-        function updateTotp() {
-            getTOTP(data.secret, 30, 6, function (code) {
-                document.getElementById("totpCode").textContent = code;
-            });
-        }
+        if (data.secret) {
+            // Function to update the TOTP code and time left
+            function updateTotp() {
+                getTOTP(data.secret, 30, 6, function (code) {
+                    document.getElementById("totpCode").textContent = code;
+                });
+            }
 
-        function updateTimer() {
-            var timeLeft = getTimeLeft(30);
-            document.getElementById("timeLeft").textContent = "Time left: " + timeLeft + "s";
-            if (timeLeft == 30) updateTotp();
-        }
+            function updateTimer() {
+                var timeLeft = getTimeLeft(30);
+                document.getElementById("timeLeft").textContent = "Time left: " + timeLeft + "s";
+                if (timeLeft == 30) updateTotp();
+            }
 
-        // Call the function immediately to display the initial code and time left
-        updateTotp();
-        updateTimer();
-
-        // Update every second
-        setInterval(function () {
+            // Call the function immediately to display the initial code and time left
+            updateTotp();
             updateTimer();
-        }, 1000); // 1000ms = 1 second
+
+            // Update every second
+            setInterval(function () {
+                updateTimer();
+            }, 1000); // 1000ms = 1 second
+        }
     });
 };
 

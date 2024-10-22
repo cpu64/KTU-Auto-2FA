@@ -7,7 +7,11 @@ var last_code_gen = 0;
 
 chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
     if (changeInfo.status == "complete") {
-        if (Date.now() - last_login1 > 1000 && tab.url && tab.url.includes("loginuserpass")) {
+        if (
+            Date.now() - last_login1 > 1000 &&
+            tab.url &&
+            tab.url.startsWith("https://login.ktu.lt/simplesaml/module.php/core/loginuserpass")
+        ) {
             last_login1 = Date.now();
             chrome.storage.local.get(["username", "password", "autoLoginInfo"], function (login_data) {
                 if (login_data.autoLoginInfo) {
@@ -19,7 +23,11 @@ chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
                     });
                 }
             });
-        } else if (Date.now() - last_login2 > 1000 && tab.url && tab.url.includes("privacyidea")) {
+        } else if (
+            Date.now() - last_login2 > 1000 &&
+            tab.url &&
+            tab.url.startsWith("https://login.ktu.lt/simplesaml/module.php/privacyidea/formBuilderMain")
+        ) {
             last_login2 = Date.now();
             chrome.storage.local.get(["secret", "auto2FA"], async function (data) {
                 if (data.auto2FA) {
@@ -45,5 +53,3 @@ chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
         }
     }
 });
-
-// resize window to see secret automatically

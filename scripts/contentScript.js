@@ -1,7 +1,6 @@
 (() => {
     chrome.runtime.onMessage.addListener((obj, sender, response) => {
-        const {message, secretScan, login_stage, username, password, code, waiting} = obj;
-        console.log("caught message");
+        const {message, login_stage, username, password, code, waiting} = obj;
         if (message === "background_to_content") {
             if (login_stage === 1) {
                 document.getElementById("username").value = username;
@@ -19,12 +18,6 @@
                     document.querySelector("input[id='submitButton']").click();
                 }
             }
-            // else if (secretScan == 1) {
-            //     if(document.getElementsByClassName('text-2xl font-medium font-sans border-b border-neutral-300 border-solid tracking-tight') != null)
-            //     {
-            //         document.body.style.width = '600px';
-            //     }
-            // }
         }
     });
 })();

@@ -20,5 +20,10 @@
         }
     ],
     "permissions": ["storage"],
-    "host_permissions": ["https://login.ktu.lt/simplesaml/module.php/*"]
+    "host_permissions": ["https://login.ktu.lt/simplesaml/module.php/*"],
+    "browser_specific_settings": {
+        "gecko": {
+            "id": "your-add-on-name@your-domain.com"
+        }
+    }
 }
